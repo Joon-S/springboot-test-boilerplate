@@ -27,6 +27,13 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-cache
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-cache', version: '2.2.2.RELEASE'
+
+	// https://mvnrepository.com/artifact/net.sf.ehcache/ehcache
+	implementation group: 'net.sf.ehcache', name: 'ehcache', version: '2.10.6'
+
 }
 
 test {
