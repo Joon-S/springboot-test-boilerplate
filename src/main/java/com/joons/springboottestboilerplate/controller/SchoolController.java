@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
@@ -32,7 +33,7 @@ public class SchoolController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> save(@RequestBody School school) {
+    public ResponseEntity<Void> save(@Valid @RequestBody School school) {
         School newSchool = schoolService.save(school);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}").buildAndExpand(newSchool.getId()).toUri();
